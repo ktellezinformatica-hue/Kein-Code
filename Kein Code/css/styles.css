@@ -655,3 +655,41 @@ footer span { color: var(--red); font-weight: 600; }
 .ver-mas-btn.open svg {
   transform: rotate(180deg);
 }
+
+/* ── MODO CLARO ── */
+body.light {
+  --bg:      #f0f0f0;
+  --bg2:     #e0e0e0;
+  --text:    #111111;
+  --muted:   #555555;
+  --border:  rgba(255, 0, 51, 0.2);
+  --card-bg: rgba(255,255,255,0.9);
+  background: var(--bg);
+  color: var(--text);
+}
+body.light nav { background: rgba(240,240,240,0.95); }
+body.light .about-card { background: rgba(255,255,255,0.9); }
+body.light .project-card { background: #fff; }
+body.light .contact-form { background: rgba(255,255,255,0.9); }
+body.light .form-group input,
+body.light .form-group textarea { background: #fff; color: #111; border-color: rgba(255,0,51,0.2); }
+body.light footer { background: #e0e0e0; }
+body.light #particles { opacity: 0.3; }
+
+/* ── TOGGLE BTN ── */
+#theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 7px 10px;
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  margin-left: 16px;
+}
+#theme-toggle:hover {
+  border-color: var(--red);
+  box-shadow: 0 0 12px rgba(255,0,51,0.2);
+}
