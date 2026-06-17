@@ -487,3 +487,26 @@ function toggleProjects() {
     document.getElementById('projects').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 }
+
+// ── THEME TOGGLE ─────────────────────────────
+function toggleTheme() {
+  const body = document.body;
+  const moon = document.getElementById('icon-moon');
+  const sun  = document.getElementById('icon-sun');
+  body.classList.toggle('light');
+  const isLight = body.classList.contains('light');
+  moon.style.display = isLight ? 'none'  : 'block';
+  sun.style.display  = isLight ? 'block' : 'none';
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+}
+
+// Cargar tema guardado
+(function() {
+  if (localStorage.getItem('theme') === 'light') {
+    document.body.classList.add('light');
+    const moon = document.getElementById('icon-moon');
+    const sun  = document.getElementById('icon-sun');
+    if (moon) moon.style.display = 'none';
+    if (sun)  sun.style.display  = 'block';
+  }
+})();
